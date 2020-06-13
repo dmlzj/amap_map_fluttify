@@ -125,14 +125,11 @@ class _AmapViewState extends State<AmapView> {
       future: Future.delayed(widget.maskDelay, () => false),
       initialData: true,
       builder: (context, snapshot) {
-        return Visibility(
-          visible: snapshot.data,
-          child: widget.mask ??
-              Container(
-                color: Colors.white,
-                child: Center(child: CupertinoActivityIndicator()),
-              ),
-        );
+        return widget.mask ??
+            Container(
+              color: Colors.white,
+              child: Center(child: CupertinoActivityIndicator()),
+            );
       },
     );
   }
